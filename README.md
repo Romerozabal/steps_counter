@@ -9,6 +9,8 @@ The web app stores each button press with the computer timestamp in epoch
 milliseconds. The ROS 2 node watches the same JSON file and publishes the active
 session counts and events.
 
+![Steps Counter main interface](docs/images/steps-counter-main.png)
+
 ## Features
 
 - Web interface with large left/right step buttons for phone or tablet use.
@@ -18,13 +20,24 @@ session counts and events.
 - ROS 2 launch file that starts both the web interface and publisher.
 - ROS 2 topics for counts, active session, latest timestamp, and event JSON.
 
+## Interface
+
+The main screen opens on a clean `Test session` with no recorded steps. Use the
+large left and right buttons on a phone/tablet, or use the keyboard shortcuts on
+a laptop during development.
+
+![Recordings page](docs/images/steps-counter-recordings.png)
+
+The recordings page lets you review sessions, export selected sessions to CSV,
+and open an HTML/SVG step timeline figure.
+
 ## Repository Layout
 
 ```text
 .
 ├── steps-counter.js              # Node.js web interface
-├── steps.json                    # Example/persistent step data
-├── steps.backup-before-merge.json
+├── steps.json                    # Clean default data file
+├── steps.backup-before-merge.json # Previous example data backup
 ├── export-all-csv.js             # Offline CSV export helper
 ├── generate-figure.js            # Offline timeline figure helper
 ├── figure-Gait_t1.html           # Example generated timeline
@@ -177,7 +190,17 @@ ros2 run steps_counter step_publisher --ros-args \
 
 ## Data Format
 
-`steps.json` stores the active session and all recorded events:
+`steps.json` stores the active session and all recorded events. The repository
+ships with an empty `Test session` so the interface starts clean:
+
+```json
+{
+  "session": "Test session",
+  "events": []
+}
+```
+
+After recording steps, the file has this shape:
 
 ```json
 {
