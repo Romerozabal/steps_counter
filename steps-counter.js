@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 /*
- * Contador de pasos — servidor web local
- * --------------------------------------
- * Sirve una pagina para el movil con dos botones grandes (pierna izquierda /
- * pierna derecha). Cada pulsacion se guarda con la HORA DEL ORDENADOR (no la
- * del movil) y bajo el nombre de la sesion activa. Se puede exportar a CSV.
+ * Steps Counter - local web server
+ * --------------------------------
+ * Serves a mobile-friendly page with two large buttons (left leg / right leg).
+ * Each press is saved with the computer time under the active session name.
+ * Data can be exported to CSV.
  *
- * Uso:
- *   node contador-pasos.js
- * Luego abre en el movil:  http://IP-DEL-ORDENADOR:3000
- * (el ordenador y el movil deben estar en la misma red wifi)
+ * Usage:
+ *   node steps-counter.js
+ * Then open on your phone:  http://COMPUTER-IP:3000
+ * (the computer and phone must be on the same Wi-Fi network)
  *
- * Sin dependencias: solo Node.js.
+ * No dependencies: only Node.js.
  */
 
 const http = require('http');
@@ -20,22 +20,22 @@ const path = require('path');
 const os = require('os');
 
 const PORT = process.env.PORT || 3000;
-const DATA_FILE = path.join(__dirname, 'pasos.json');
+const DATA_FILE = process.env.STEP_DATA_FILE || path.join(__dirname, 'steps.json');
 
-// ---- Estado / persistencia -------------------------------------------------
+// ---- State / persistence ---------------------------------------------------
 
-let state = { session: 'Sesion 1', events: [] };
+let state = { session: 'Session 1', events: [] };
 
 function load() {
   try {
     if (fs.existsSync(DATA_FILE)) {
       state = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
       if (!Array.isArray(state.events)) state.events = [];
-      if (!state.session) state.session = 'Sesion 1';
+      if (!state.session) state.session = 'Session 1';
     }
   } catch (e) {
-    console.error('No se pudo leer pasos.json, empezando vacio:', e.message);
-    state = { session: 'Sesion 1', events: [] };
+    console.error('Could not read steps.json, starting empty:', e.message);
+    state = { session: 'Session 1', events: [] };
   }
 }
 
@@ -43,13 +43,13 @@ function save() {
   try {
     fs.writeFileSync(DATA_FILE, JSON.stringify(state, null, 2));
   } catch (e) {
-    console.error('No se pudo guardar pasos.json:', e.message);
+    console.error('Could not save steps.json:', e.message);
   }
 }
 
 load();
 
-// ---- Utilidades ------------------------------------------------------------
+// ---- Utilities -------------------------------------------------------------
 
 function readBody(req) {
   return new Promise((resolve) => {
@@ -73,23 +73,23 @@ function buildCsv(names) {
     .filter((e) => !set || set.has(e.session))
     .slice()
     .sort((a, b) => a.t - b.t);
-  const header = ['n', 'sesion', 'pierna', 'fecha_hora_local', 'iso', 'epoch_ms'];
+  const header = ['n', 'session', 'leg', 'local_datetime', 'iso', 'epoch_ms'];
   const rows = [header.join(',')];
   evs.forEach((e, i) => {
     const d = new Date(e.t);
     rows.push([
       i + 1,
       e.session,
-      e.leg === 'L' ? 'izquierda' : 'derecha',
+      e.leg === 'L' ? 'left' : 'right',
       d.toLocaleString(),
       d.toISOString(),
       e.t,
     ].map(csvCell).join(','));
   });
-  return '﻿' + rows.join('\r\n') + '\r\n'; // BOM para Excel
+  return '﻿' + rows.join('\r\n') + '\r\n'; // BOM for Excel
 }
 
-// Lista de grabaciones (sesiones con eventos) con sus metricas, en orden de aparicion.
+// List recordings with metrics in original order.
 function sessionList() {
   const order = [], by = {};
   state.events.forEach((e) => {
@@ -112,15 +112,15 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 }
 
-// Construye una figura (HTML con SVG) de la linea temporal de pasos de una sesion.
-function buildFigureHtml(sesion) {
-  const ev = state.events.filter((e) => e.session === sesion).sort((a, b) => a.t - b.t);
+// Build an HTML/SVG figure for one session step timeline.
+function buildFigureHtml(session) {
+  const ev = state.events.filter((e) => e.session === session).sort((a, b) => a.t - b.t);
   if (ev.length === 0) {
-    return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
+    return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Figura</title><style>body{margin:0;background:#0f172a;color:#e2e8f0;font-family:system-ui,sans-serif;
+<title>Figure</title><style>body{margin:0;background:#0f172a;color:#e2e8f0;font-family:system-ui,sans-serif;
 display:flex;align-items:center;justify-content:center;height:100vh;text-align:center;padding:24px;}</style></head>
-<body><div><h2>«${escapeHtml(sesion)}»</h2><p>Esta sesion todavia no tiene pasos.<br>Da algunos pasos y vuelve a guardar.</p></div></body></html>`;
+<body><div><h2>«${escapeHtml(session)}»</h2><p>This session does not have steps yet.<br>Add steps and save again.</p></div></body></html>`;
   }
 
   const t0 = ev[0].t, t1 = ev[ev.length - 1].t;
@@ -129,40 +129,40 @@ display:flex;align-items:center;justify-content:center;height:100vh;text-align:c
   const R = ev.filter((e) => e.leg === 'R');
   const ints = [];
   for (let i = 1; i < ev.length; i++) ints.push((ev[i].t - ev[i - 1].t) / 1000);
-  const intMedia = ints.reduce((s, x) => s + x, 0) / (ints.length || 1);
-  const cadencia = (ev.length / durS) * 60;
+  const meanInterval = ints.reduce((s, x) => s + x, 0) / (ints.length || 1);
+  const cadence = (ev.length / durS) * 60;
 
   const W = 960, H = 380, m = { l: 90, r: 30, t: 70, b: 70 };
   const plotW = W - m.l - m.r;
-  const yIzq = m.t + 40, yDer = m.t + 130;
+  const yLeft = m.t + 40, yRight = m.t + 130;
   const x = (t) => m.l + ((t - t0) / 1000 / durS) * plotW;
 
   let svg = '';
-  svg += `<line x1="${m.l}" y1="${yIzq}" x2="${m.l + plotW}" y2="${yIzq}" stroke="#334155" stroke-width="1.5"/>`;
-  svg += `<line x1="${m.l}" y1="${yDer}" x2="${m.l + plotW}" y2="${yDer}" stroke="#334155" stroke-width="1.5"/>`;
-  svg += `<text x="${m.l - 12}" y="${yIzq + 5}" fill="#2563eb" font-size="15" font-weight="700" text-anchor="end">Izquierda</text>`;
-  svg += `<text x="${m.l - 12}" y="${yDer + 5}" fill="#16a34a" font-size="15" font-weight="700" text-anchor="end">Derecha</text>`;
+  svg += `<line x1="${m.l}" y1="${yLeft}" x2="${m.l + plotW}" y2="${yLeft}" stroke="#334155" stroke-width="1.5"/>`;
+  svg += `<line x1="${m.l}" y1="${yRight}" x2="${m.l + plotW}" y2="${yRight}" stroke="#334155" stroke-width="1.5"/>`;
+  svg += `<text x="${m.l - 12}" y="${yLeft + 5}" fill="#2563eb" font-size="15" font-weight="700" text-anchor="end">Left</text>`;
+  svg += `<text x="${m.l - 12}" y="${yRight + 5}" fill="#16a34a" font-size="15" font-weight="700" text-anchor="end">Right</text>`;
 
   const stepSec = durS <= 20 ? 2 : durS <= 60 ? 5 : 10;
   for (let s = 0; s <= durS + 0.001; s += stepSec) {
     const xx = m.l + (s / durS) * plotW;
-    svg += `<line x1="${xx}" y1="${yIzq - 30}" x2="${xx}" y2="${yDer + 30}" stroke="#1e293b" stroke-width="1"/>`;
-    svg += `<text x="${xx}" y="${yDer + 50}" fill="#64748b" font-size="12" text-anchor="middle">${s}s</text>`;
+    svg += `<line x1="${xx}" y1="${yLeft - 30}" x2="${xx}" y2="${yRight + 30}" stroke="#1e293b" stroke-width="1"/>`;
+    svg += `<text x="${xx}" y="${yRight + 50}" fill="#64748b" font-size="12" text-anchor="middle">${s}s</text>`;
   }
-  svg += `<text x="${m.l + plotW / 2}" y="${H - 12}" fill="#94a3b8" font-size="13" text-anchor="middle">Tiempo desde el inicio (segundos)</text>`;
+  svg += `<text x="${m.l + plotW / 2}" y="${H - 12}" fill="#94a3b8" font-size="13" text-anchor="middle">Time from start (seconds)</text>`;
 
-  const pathPts = ev.map((e) => `${x(e.t).toFixed(1)},${e.leg === 'L' ? yIzq : yDer}`).join(' ');
+  const pathPts = ev.map((e) => `${x(e.t).toFixed(1)},${e.leg === 'L' ? yLeft : yRight}`).join(' ');
   svg += `<polyline points="${pathPts}" fill="none" stroke="#475569" stroke-width="1" opacity="0.5"/>`;
   ev.forEach((e) => {
-    const cy = e.leg === 'L' ? yIzq : yDer;
+    const cy = e.leg === 'L' ? yLeft : yRight;
     const col = e.leg === 'L' ? '#2563eb' : '#16a34a';
     svg += `<circle cx="${x(e.t).toFixed(1)}" cy="${cy}" r="7" fill="${col}" stroke="#0f172a" stroke-width="1.5"/>`;
   });
 
-  const fecha = new Date(t0).toLocaleString();
-  return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
+  const startDate = new Date(t0).toLocaleString();
+  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Figura — ${escapeHtml(sesion)}</title>
+<title>Figure — ${escapeHtml(session)}</title>
 <style>
  body{margin:0;background:#0f172a;color:#e2e8f0;font-family:system-ui,-apple-system,sans-serif;padding:20px;}
  h1{font-size:20px;margin:0 0 4px;} .sub{color:#94a3b8;margin:0 0 14px;font-size:13px;}
@@ -172,25 +172,25 @@ display:flex;align-items:center;justify-content:center;height:100vh;text-align:c
  svg{background:#0b1220;border:1px solid #1e293b;border-radius:14px;max-width:100%;height:auto;}
  a{display:inline-block;margin-top:16px;color:#94a3b8;font-size:14px;}
 </style></head><body>
- <h1>Línea temporal de pasos — «${escapeHtml(sesion)}»</h1>
- <p class="sub">Inicio: ${fecha} · Duración: ${durS.toFixed(1)} s</p>
+ <h1>Step timeline — «${escapeHtml(session)}»</h1>
+ <p class="sub">Start: ${startDate} · Duration: ${durS.toFixed(1)} s</p>
  <div class="cards">
-   <div class="card"><div class="k">Total pasos</div><div class="v">${ev.length}</div></div>
-   <div class="card"><div class="k">Izquierda</div><div class="v" style="color:#3b82f6">${L.length}</div></div>
-   <div class="card"><div class="k">Derecha</div><div class="v" style="color:#22c55e">${R.length}</div></div>
-   <div class="card"><div class="k">Cadencia</div><div class="v">${cadencia.toFixed(0)} <span style="font-size:12px;font-weight:500;color:#94a3b8">p/min</span></div></div>
-   <div class="card"><div class="k">Intervalo medio</div><div class="v">${intMedia.toFixed(2)} <span style="font-size:12px;font-weight:500;color:#94a3b8">s</span></div></div>
+   <div class="card"><div class="k">Total steps</div><div class="v">${ev.length}</div></div>
+   <div class="card"><div class="k">Left</div><div class="v" style="color:#3b82f6">${L.length}</div></div>
+   <div class="card"><div class="k">Right</div><div class="v" style="color:#22c55e">${R.length}</div></div>
+   <div class="card"><div class="k">Cadence</div><div class="v">${cadence.toFixed(0)} <span style="font-size:12px;font-weight:500;color:#94a3b8">steps/min</span></div></div>
+   <div class="card"><div class="k">Mean interval</div><div class="v">${meanInterval.toFixed(2)} <span style="font-size:12px;font-weight:500;color:#94a3b8">s</span></div></div>
  </div>
  <svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">${svg}</svg>
- <br><a href="/">← Volver al contador</a>
+ <br><a href="/">← Back to counter</a>
 </body></html>`;
 }
 
-// Pagina para revisar las grabaciones y descargar los CSV que se quieran.
-function pageGrabaciones() {
-  return `<!DOCTYPE html><html lang="es"><head><meta charset="utf-8">
+// Page for reviewing recordings and downloading selected CSV files.
+function pageRecordings() {
+  return `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grabaciones</title>
+<title>Recordings</title>
 <style>
  body{margin:0;background:#0f172a;color:#e2e8f0;font-family:system-ui,-apple-system,sans-serif;padding:16px;}
  h1{font-size:20px;margin:0 0 12px;}
@@ -211,30 +211,30 @@ function pageGrabaciones() {
  .empty{color:#94a3b8;}
  .back{color:#94a3b8;font-size:14px;display:inline-block;margin-bottom:12px;}
 </style></head><body>
- <a class="back" href="/">← Volver al contador</a>
- <h1>Grabaciones</h1>
+ <a class="back" href="/">← Back to counter</a>
+ <h1>Recordings</h1>
  <div class="actions">
-   <a class="btn primary" href="/export.csv">⬇ Descargar TODAS (un CSV)</a>
-   <button class="primary" id="dlSel">⬇ Descargar seleccionadas</button>
-   <button class="sec" id="all">Marcar todas</button>
-   <button class="sec" id="none">Ninguna</button>
+   <a class="btn primary" href="/export.csv">⬇ Download ALL (one CSV)</a>
+   <button class="primary" id="dlSel">⬇ Download selected</button>
+   <button class="sec" id="all">Select all</button>
+   <button class="sec" id="none">None</button>
  </div>
- <div class="list" id="list"><p class="empty">Cargando…</p></div>
+ <div class="list" id="list"><p class="empty">Loading…</p></div>
 <script>
  const fmt = (ms) => new Date(ms).toLocaleString();
  const enc = encodeURIComponent;
  let SESS = [];
  function render() {
    const c = document.getElementById('list');
-   if (!SESS.length) { c.innerHTML = '<p class="empty">Aún no hay grabaciones con datos.</p>'; return; }
+   if (!SESS.length) { c.innerHTML = '<p class="empty">There are no recordings with data yet.</p>'; return; }
    c.innerHTML = SESS.map((s, i) => {
      const dur = s.dur >= 60 ? (s.dur/60).toFixed(1)+' min' : s.dur.toFixed(0)+' s';
      return '<div class="row'+(s.active?' act':'')+'">' +
        '<input class="chk" type="checkbox" data-i="'+i+'">' +
-       '<div class="info"><div class="name">'+s.name.replace(/</g,'&lt;')+(s.active?'<span class="badge">activa</span>':'')+'</div>' +
-       '<div class="meta">'+s.count+' pasos (I:'+s.L+' / D:'+s.R+') · '+dur+' · '+fmt(s.start)+'</div></div>' +
+       '<div class="info"><div class="name">'+s.name.replace(/</g,'&lt;')+(s.active?'<span class="badge">active</span>':'')+'</div>' +
+       '<div class="meta">'+s.count+' steps (L:'+s.L+' / R:'+s.R+') · '+dur+' · '+fmt(s.start)+'</div></div>' +
        '<div class="rowbtns">' +
-         '<a href="/figura?s='+enc(s.name)+'" target="_blank">Figura</a>' +
+         '<a href="/figure?s='+enc(s.name)+'" target="_blank">Figure</a>' +
          '<a class="csv" href="/export.csv?sel='+i+'">CSV</a>' +
        '</div></div>';
    }).join('');
@@ -244,7 +244,7 @@ function pageGrabaciones() {
  }
  document.getElementById('dlSel').addEventListener('click', () => {
    const sel = checked();
-   if (!sel.length) { alert('Marca al menos una grabación.'); return; }
+   if (!sel.length) { alert('Select at least one recording.'); return; }
    window.location = '/export.csv?sel=' + sel.join(',');
  });
  document.getElementById('all').addEventListener('click', () => document.querySelectorAll('.chk').forEach(c=>c.checked=true));
@@ -274,17 +274,17 @@ function counts() {
   return { L, R, total: L + R };
 }
 
-// ---- Pagina HTML -----------------------------------------------------------
+// ---- HTML page -----------------------------------------------------------
 
 function pageHtml() {
   return `<!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>Contador de pasos</title>
+<title>Steps Counter</title>
 <style>
-  :root { --izq:#2563eb; --der:#16a34a; }
+  :root { --left:#2563eb; --right:#16a34a; }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body { margin:0; height:100%; font-family: system-ui, -apple-system, sans-serif; background:#0f172a; color:#e2e8f0; overflow:hidden; }
   .top { display:flex; flex-direction:column; gap:8px; padding:10px 12px; }
@@ -297,8 +297,8 @@ function pageHtml() {
   .pad { flex:1; border-radius:18px; border:none; color:#fff; font-size:26px; font-weight:800; letter-spacing:.5px;
          display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; user-select:none; touch-action:manipulation; }
   .pad .n { font-size:64px; line-height:1; }
-  .pad.izq { background:var(--izq); }
-  .pad.der { background:var(--der); }
+  .pad.left { background:var(--left); }
+  .pad.right { background:var(--right); }
   .pad:active { filter:brightness(.8); transform:scale(.99); }
   .bar { display:flex; gap:8px; padding:0 12px 12px; }
   .bar button { flex:1; }
@@ -311,29 +311,29 @@ function pageHtml() {
 <body>
   <div class="top">
     <div class="session">
-      <input id="session" placeholder="Nombre de la sesion" autocomplete="off">
-      <button id="newSession" class="ok">Nueva sesion</button>
+      <input id="session" placeholder="Session name" autocomplete="off">
+      <button id="newSession" class="ok">New session</button>
     </div>
     <div class="stats">
-      <span>Izquierda <b id="cL">0</b></span>
+      <span>Left <b id="cL">0</b></span>
       <span>Total <b id="cT">0</b></span>
-      <span>Derecha <b id="cR">0</b></span>
+      <span>Right <b id="cR">0</b></span>
     </div>
   </div>
 
   <div class="pads">
-    <button class="pad izq" data-leg="L"><span class="n" id="nL">0</span><span>IZQUIERDA</span></button>
-    <button class="pad der" data-leg="R"><span class="n" id="nR">0</span><span>DERECHA</span></button>
+    <button class="pad left" data-leg="L"><span class="n" id="nL">0</span><span>LEFT</span></button>
+    <button class="pad right" data-leg="R"><span class="n" id="nR">0</span><span>RIGHT</span></button>
   </div>
 
   <div class="bar">
-    <button id="undo">Deshacer</button>
-    <button id="save" class="ok">Guardar datos</button>
-    <button id="reset" class="danger">Borrar sesion</button>
+    <button id="undo">Undo</button>
+    <button id="save" class="ok">Save data</button>
+    <button id="reset" class="danger">Clear session</button>
   </div>
   <div class="bar">
-    <button id="grab">Ver grabaciones</button>
-    <button id="export" class="ok">Exportar CSV</button>
+    <button id="grab">View recordings</button>
+    <button id="export" class="ok">Export CSV</button>
   </div>
 
   <div class="toast" id="toast"></div>
@@ -362,34 +362,34 @@ function pageHtml() {
     p.addEventListener('click', () => step(p.dataset.leg));
   });
   $('newSession').addEventListener('click', async () => {
-    const name = ($('session').value.trim()) || 'Sesion ' + new Date().toLocaleString();
+    const name = ($('session').value.trim()) || 'Session ' + new Date().toLocaleString();
     render(await api('/session', { name }));
-    $('session').blur(); toast('Nueva sesion: ' + name);
+    $('session').blur(); toast('New session: ' + name);
   });
-  $('undo').addEventListener('click', async () => { render(await api('/undo')); toast('Deshecho'); });
-  $('grab').addEventListener('click', () => { window.location = '/grabaciones'; });
+  $('undo').addEventListener('click', async () => { render(await api('/undo')); toast('Undone'); });
+  $('grab').addEventListener('click', () => { window.location = '/recordings'; });
   $('save').addEventListener('click', async () => {
-    const w = window.open('/figura', '_blank'); // abrir aqui (gesto del usuario) para evitar bloqueo
+    const w = window.open('/figure', '_blank'); // Open here from the user gesture to avoid popup blocking.
     const r = await api('/save');
     if (r.ok) {
-      toast('Guardado: ' + r.saved + ' eventos · figura abierta');
-      if (!w) window.location = '/figura'; // si el navegador bloqueo la pestana, ir a la figura
+      toast('Saved: ' + r.saved + ' events · figure opened');
+      if (!w) window.location = '/figure'; // If the browser blocked the tab, navigate to the figure.
     } else {
-      toast('ERROR al guardar');
+      toast('ERROR while saving');
     }
   });
   $('reset').addEventListener('click', async () => {
-    if (confirm('Borrar todos los pasos de esta sesion?')) { render(await api('/reset')); toast('Sesion borrada'); }
+    if (confirm('Clear all steps from this session?')) { render(await api('/reset')); toast('Session cleared'); }
   });
   $('export').addEventListener('click', () => { window.location = '/export.csv'; });
-  // estado inicial
+  // Initial state.
   fetch('/state').then(r => r.json()).then(render);
 </script>
 </body>
 </html>`;
 }
 
-// ---- Servidor --------------------------------------------------------------
+// ---- Server --------------------------------------------------------------
 
 const server = http.createServer(async (req, res) => {
   const u = new URL(req.url, 'http://localhost');
@@ -401,9 +401,9 @@ const server = http.createServer(async (req, res) => {
     return res.end(pageHtml());
   }
 
-  if (req.method === 'GET' && url === '/grabaciones') {
+  if (req.method === 'GET' && url === '/recordings') {
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    return res.end(pageGrabaciones());
+    return res.end(pageRecordings());
   }
 
   if (req.method === 'GET' && url === '/sessions') {
@@ -419,7 +419,7 @@ const server = http.createServer(async (req, res) => {
   if (req.method === 'POST' && url === '/step') {
     const b = await readBody(req);
     const leg = b.leg === 'L' ? 'L' : 'R';
-    state.events.push({ session: state.session, leg, t: Date.now() }); // hora del ordenador
+    state.events.push({ session: state.session, leg, t: Date.now() }); // computer time
     save();
     res.writeHead(200, { 'Content-Type': 'application/json' });
     return res.end(JSON.stringify(Object.assign({ session: state.session }, counts())));
@@ -444,7 +444,7 @@ const server = http.createServer(async (req, res) => {
 
   if (req.method === 'POST' && url === '/save') {
     save();
-    // releer el archivo para confirmar que de verdad esta en disco
+    // reread the file to confirm it was written to disk
     let saved = 0, ok = false;
     try {
       const disk = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
@@ -462,26 +462,26 @@ const server = http.createServer(async (req, res) => {
     return res.end(JSON.stringify(Object.assign({ session: state.session }, counts())));
   }
 
-  if (req.method === 'GET' && url === '/figura') {
-    // sesion indicada en ?s= ; si no, la activa; si esa no tiene pasos, la ultima con eventos
-    let sesion = q.get('s') || state.session;
-    if (!state.events.some((e) => e.session === sesion)) {
-      for (let i = state.events.length - 1; i >= 0; i--) { sesion = state.events[i].session; break; }
+  if (req.method === 'GET' && url === '/figure') {
+    // session from ?s=; otherwise active session; if it has no steps, use the last session with events
+    let session = q.get('s') || state.session;
+    if (!state.events.some((e) => e.session === session)) {
+      for (let i = state.events.length - 1; i >= 0; i--) { session = state.events[i].session; break; }
     }
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-    return res.end(buildFigureHtml(sesion));
+    return res.end(buildFigureHtml(session));
   }
 
   if (req.method === 'GET' && url === '/export.csv') {
-    // ?sel=indices (segun /sessions), o ?session=NOMBRE, o nada = todas
-    let names = null, suffix = 'todas';
+    // ?sel=indices from /sessions, ?session=NAME, or empty = all.
+    let names = null, suffix = 'all';
     if (q.get('sel') !== null) {
       const list = sessionList();
       names = q.get('sel').split(',')
         .map((i) => list[parseInt(i, 10)])
         .filter(Boolean)
         .map((x) => x.name);
-      suffix = names.length === 1 ? names[0].replace(/[^\w\-]+/g, '_') : 'seleccion';
+      suffix = names.length === 1 ? names[0].replace(/[^\w\-]+/g, '_') : 'selection';
     } else if (q.get('session')) {
       names = [q.get('session')];
       suffix = names[0].replace(/[^\w\-]+/g, '_');
@@ -489,24 +489,24 @@ const server = http.createServer(async (req, res) => {
     const stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
     res.writeHead(200, {
       'Content-Type': 'text/csv; charset=utf-8',
-      'Content-Disposition': 'attachment; filename="pasos-' + suffix + '-' + stamp + '.csv"',
+      'Content-Disposition': 'attachment; filename="steps-' + suffix + '-' + stamp + '.csv"',
     });
     return res.end(buildCsv(names));
   }
 
   res.writeHead(404, { 'Content-Type': 'text/plain' });
-  res.end('No encontrado');
+  res.end('Not found');
 });
 
 server.listen(PORT, '0.0.0.0', () => {
   const ips = localIPs();
-  console.log('\n  Contador de pasos en marcha\n');
-  console.log('  En este ordenador:  http://localhost:' + PORT);
+  console.log('\n  Steps Counter running\n');
+  console.log('  On this computer:  http://localhost:' + PORT);
   if (ips.length) {
-    console.log('  Desde el movil (misma wifi):');
+    console.log('  From a phone on the same Wi-Fi:');
     ips.forEach((ip) => console.log('      http://' + ip + ':' + PORT));
   } else {
-    console.log('  (No se detecto IP de red. Conecta el ordenador a la wifi.)');
+    console.log('  (No network IP detected. Connect the computer to Wi-Fi.)');
   }
-  console.log('\n  Pulsa Ctrl+C para detener.\n');
+  console.log('\n  Press Ctrl+C to stop.\n');
 });

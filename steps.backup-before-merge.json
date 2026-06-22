@@ -1,828 +1,828 @@
 {
-  "session": "Marcha t3 curv",
+  "session": "Gait t3 curv",
   "events": [
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "L",
       "t": 1781708809817
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "R",
       "t": 1781708810556
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "L",
       "t": 1781708811376
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "R",
       "t": 1781708812196
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "L",
       "t": 1781708813016
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "R",
       "t": 1781708813832
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "L",
       "t": 1781708814636
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "R",
       "t": 1781708815496
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "L",
       "t": 1781708816496
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "R",
       "t": 1781708817416
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "L",
       "t": 1781708818156
     },
     {
-      "session": "Sesion 1",
+      "session": "Session 1",
       "leg": "R",
       "t": 1781708818926
     },
     {
-      "session": "Prueba marcha",
+      "session": "Gait test",
       "leg": "L",
       "t": 1781709030454
     },
     {
-      "session": "Prueba marcha",
+      "session": "Gait test",
       "leg": "R",
       "t": 1781709030685
     },
     {
-      "session": "Prueba marcha",
+      "session": "Gait test",
       "leg": "L",
       "t": 1781709030918
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709212677
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709214456
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709216168
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709218306
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709219946
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709221646
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709223509
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709225177
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709226917
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709228546
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709230297
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709231796
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709233667
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709235287
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709236947
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709238667
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709240426
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709242166
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709243896
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709245547
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709247186
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709249026
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709250546
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709252306
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709253846
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709255487
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709257017
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709258657
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709260298
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709261897
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709263477
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709265207
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "L",
       "t": 1781709266647
     },
     {
-      "session": "Marcha t1",
+      "session": "Gait t1",
       "leg": "R",
       "t": 1781709268386
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710041299
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710042629
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710044478
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710045998
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710047649
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710049190
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710050828
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710052258
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710053618
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710055429
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710056869
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710058398
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710059838
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710061268
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710062658
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710064338
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710065558
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710067308
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710068638
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710070079
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710071608
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710073138
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710074578
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710076018
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710077449
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710078878
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710080419
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710081764
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "L",
       "t": 1781710083338
     },
     {
-      "session": "Marcha t2",
+      "session": "Gait t2",
       "leg": "R",
       "t": 1781710084818
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710138691
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710141855
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710143949
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710145541
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710147249
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710148819
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710150339
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710151998
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710153639
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710155019
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710156499
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710158449
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710160089
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710161519
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710163059
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710164299
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710165989
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710167559
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710169099
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710170609
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710172208
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710173812
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710175351
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710176879
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710178424
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710179949
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710181489
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710182819
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710184559
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710185989
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710187519
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710188959
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710190499
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710192140
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710193570
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710195109
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710196539
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710198059
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710199689
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710201214
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710202730
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710204199
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710205579
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710207149
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710208927
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710210349
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781710212059
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781710213379
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699414411
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699416071
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699417341
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699418871
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699420191
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699421633
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699422991
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699424461
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699425762
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699427172
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699428532
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699429962
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699431502
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699432932
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699434321
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699435672
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699437031
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699438511
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699439952
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699441401
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699442651
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699444062
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699445482
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699446721
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699448141
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699449572
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699451033
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699452261
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699453881
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699455259
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699456591
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699458021
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699459352
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699460781
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699462072
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699463431
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "L",
       "t": 1781699464762
     },
     {
-      "session": "Marcha t3 curv",
+      "session": "Gait t3 curv",
       "leg": "R",
       "t": 1781699466062
     }
