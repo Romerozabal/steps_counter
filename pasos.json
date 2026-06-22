@@ -1,0 +1,1650 @@
+{
+  "session": "Marcha t4 curv speed",
+  "events": [
+    {
+      "session": "Sesion 1",
+      "leg": "L",
+      "t": 1781708809817
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "R",
+      "t": 1781708810556
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "L",
+      "t": 1781708811376
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "R",
+      "t": 1781708812196
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "L",
+      "t": 1781708813016
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "R",
+      "t": 1781708813832
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "L",
+      "t": 1781708814636
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "R",
+      "t": 1781708815496
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "L",
+      "t": 1781708816496
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "R",
+      "t": 1781708817416
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "L",
+      "t": 1781708818156
+    },
+    {
+      "session": "Sesion 1",
+      "leg": "R",
+      "t": 1781708818926
+    },
+    {
+      "session": "Prueba marcha",
+      "leg": "L",
+      "t": 1781709030454
+    },
+    {
+      "session": "Prueba marcha",
+      "leg": "R",
+      "t": 1781709030685
+    },
+    {
+      "session": "Prueba marcha",
+      "leg": "L",
+      "t": 1781709030918
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709212677
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709214456
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709216168
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709218306
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709219946
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709221646
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709223509
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709225177
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709226917
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709228546
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709230297
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709231796
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709233667
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709235287
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709236947
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709238667
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709240426
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709242166
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709243896
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709245547
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709247186
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709249026
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709250546
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709252306
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709253846
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709255487
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709257017
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709258657
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709260298
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709261897
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709263477
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709265207
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "L",
+      "t": 1781709266647
+    },
+    {
+      "session": "Marcha t1",
+      "leg": "R",
+      "t": 1781709268386
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710041299
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710042629
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710044478
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710045998
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710047649
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710049190
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710050828
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710052258
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710053618
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710055429
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710056869
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710058398
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710059838
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710061268
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710062658
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710064338
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710065558
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710067308
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710068638
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710070079
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710071608
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710073138
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710074578
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710076018
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710077449
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710078878
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710080419
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710081764
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "L",
+      "t": 1781710083338
+    },
+    {
+      "session": "Marcha t2",
+      "leg": "R",
+      "t": 1781710084818
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699467531
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699470695
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699472789
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699474381
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699476089
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699477659
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699479179
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699480838
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699482479
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699483859
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699485339
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699487289
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699488929
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699490359
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699491899
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699493139
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699494829
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699496399
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699497939
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699499449
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699501048
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699502652
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699504191
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699505719
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699507264
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699508789
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699510329
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699511659
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699513399
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699514829
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699516359
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699517799
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699519339
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699520980
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699522410
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699523949
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699525379
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699526899
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699528529
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699530054
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699531570
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699533039
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699534419
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699535989
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699537767
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699539189
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699540899
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699542219
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699414411
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699416071
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699417341
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699418871
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699420191
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699421633
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699422991
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699424461
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699425762
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699427172
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699428532
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699429962
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699431502
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699432932
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699434321
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699435672
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699437031
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699438511
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699439952
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699441401
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699442651
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699444062
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699445482
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699446721
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699448141
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699449572
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699451033
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699452261
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699453881
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699455259
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699456591
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699458021
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699459352
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699460781
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699462072
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699463431
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "L",
+      "t": 1781699464762
+    },
+    {
+      "session": "Marcha t3 curv",
+      "leg": "R",
+      "t": 1781699466062
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700500952
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700502502
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700503735
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700505263
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700506493
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700507823
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700509162
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700510285
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700511632
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700512842
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700514172
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700515204
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700516323
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700517654
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700518993
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700520323
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700521713
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700523275
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700524522
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700526153
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700527382
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700528714
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700529842
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700531483
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700532652
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700533945
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700535163
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700536602
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700537682
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700539063
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700540352
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700541723
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700542964
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700544283
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700545532
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700547044
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700548272
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700549504
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700550692
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700552062
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700553422
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700554833
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700556012
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700557283
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700558612
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700559744
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700560973
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700562302
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700563534
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700564762
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700565984
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700567323
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700568582
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700569782
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700571004
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700572342
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700573564
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700574692
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700575922
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700577252
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700578332
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700579613
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700580942
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700582062
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700583192
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700584352
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700585553
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700586672
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700587792
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700589132
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700590262
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700591484
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700593023
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700594342
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700596094
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700598364
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700600293
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700602623
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700605002
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700607253
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700609273
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700611252
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700612783
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700615512
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700616473
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700618012
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700619034
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700620134
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700621302
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700622562
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700623542
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700625283
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700626303
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700627632
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700629072
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700630604
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700632143
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700633674
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700634802
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700636313
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700637773
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700639004
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700640335
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700641562
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700642684
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700644323
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700646175
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700648212
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700650164
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700652004
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700653855
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700655693
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700656982
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700658563
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700659993
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700661222
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700662454
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700663782
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700665113
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700666543
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700667772
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700669005
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700670323
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700671552
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700673002
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700674533
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700675662
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700677093
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700678224
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700679653
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700680782
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700682323
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700683643
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700684833
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700686005
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700687432
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700688873
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700690302
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700691633
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700693072
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700694813
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700696554
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700698492
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700700344
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700701993
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700703883
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700705873
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700707816
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700709243
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700710583
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700711704
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700712913
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700714273
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700715393
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700716543
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700717664
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700719053
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700720204
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700721234
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700722422
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700723598
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700724705
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "L",
+      "t": 1781700725934
+    },
+    {
+      "session": "Marcha t4 curv speed",
+      "leg": "R",
+      "t": 1781700727273
+    }
+  ]
+}
