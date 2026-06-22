@@ -1,32 +1,61 @@
-# Contador de pasos
+# Steps Counter
 
-Servidor web local en **Node.js** (sin dependencias) para contar pasos durante
-ensayos de marcha. Sirve una página pensada para el móvil con dos botones
-grandes (pierna izquierda / pierna derecha). Cada pulsación se guarda con la
-**hora del ordenador** (no la del móvil) y bajo el nombre de la sesión activa.
-Los datos se pueden exportar a CSV.
+Local **Node.js** web server with no external dependencies for manually marking
+steps during gait experiments. It serves a mobile-friendly interface with two
+large buttons, one for the left leg and one for the right leg.
 
-## Uso
+Each button press is saved with the computer timestamp, not the phone
+timestamp, under the active session name. The recorded data can be exported to
+CSV and used as manual labels for step segmentation experiments.
+
+## Usage
 
 ```bash
 node contador-pasos.js
 ```
 
-Luego, desde el móvil (en la misma red wifi que el ordenador):
+Then open the interface in a browser:
 
+```text
+http://localhost:3000
 ```
-http://IP-DEL-ORDENADOR:3000
+
+From a phone or tablet on the same Wi-Fi network, use the computer IP address:
+
+```text
+http://COMPUTER-IP:3000
 ```
 
-El puerto se puede cambiar con la variable de entorno `PORT`.
+The port can be changed with the `PORT` environment variable:
 
-## Archivos
+```bash
+PORT=3001 node contador-pasos.js
+```
 
-| Archivo | Descripción |
+## Files
+
+| File | Description |
 |---|---|
-| `contador-pasos.js` | Aplicación principal (servidor web). |
-| `pasos.json` | Datos persistidos (sesiones y pulsaciones). |
-| `pasos.backup-antes-de-unir.json` | Copia de seguridad previa a una fusión de datos. |
-| `exportar-todo-csv.js` | Exporta todas las sesiones a CSV. |
-| `generar-figura.js` | Genera una figura a partir de los datos. |
-| `figura-Marcha_t1.html` | Figura de marcha generada. |
+| `contador-pasos.js` | Main web application. |
+| `pasos.json` | Persistent step/session data. |
+| `pasos.backup-antes-de-unir.json` | Backup data file created before a data merge. |
+| `exportar-todo-csv.js` | Exports all sessions to CSV files. |
+| `generar-figura.js` | Generates an HTML/SVG timeline figure from the recorded data. |
+| `figura-Marcha_t1.html` | Example generated gait timeline figure. |
+
+## Data Format
+
+The data file stores the active session and an array of events:
+
+```json
+{
+  "session": "Session name",
+  "events": [
+    { "session": "Session name", "leg": "L", "t": 1781700500952 },
+    { "session": "Session name", "leg": "R", "t": 1781700502502 }
+  ]
+}
+```
+
+`leg` is `L` for left and `R` for right. `t` is the computer timestamp in epoch
+milliseconds.
