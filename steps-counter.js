@@ -192,27 +192,36 @@ function pageRecordings() {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Recordings</title>
 <style>
- body{margin:0;background:#0f172a;color:#e2e8f0;font-family:system-ui,-apple-system,sans-serif;padding:16px;}
- h1{font-size:20px;margin:0 0 12px;}
- .actions{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px;}
- button,a.btn{padding:10px 14px;font-size:14px;border-radius:10px;border:none;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;}
- .primary{background:#166534;color:#fff;} .sec{background:#334155;color:#e2e8f0;}
+ :root{--bg:#07111f;--panel:#101b2e;--panel2:#15223a;--line:#253553;--text:#edf4ff;--muted:#9fb0c8;--ok:#15803d;--button:#22314f;}
+ *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+ body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,sans-serif;padding:14px;}
+ .page{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+ .header{display:flex;justify-content:space-between;align-items:center;gap:12px;}
+ h1{font-size:22px;margin:0;}
+ .sub{color:var(--muted);font-size:13px;margin-top:2px;}
+ button,a.btn{padding:12px 14px;font-size:14px;border-radius:10px;border:none;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;color:var(--text);background:var(--button);}
+ button:active,a.btn:active{transform:translateY(1px);filter:brightness(.94);}
+ .primary{background:var(--ok)!important;color:#fff;} .sec{background:var(--button);color:var(--text);}
+ .actions{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;}
  .list{display:flex;flex-direction:column;gap:10px;}
- .row{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:12px;display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
- .row.act{border-color:#16a34a;}
- .chk{width:22px;height:22px;flex:0 0 auto;}
- .info{flex:1;min-width:160px;}
- .name{font-size:16px;font-weight:700;}
- .meta{color:#94a3b8;font-size:13px;margin-top:2px;}
- .badge{display:inline-block;background:#166534;color:#fff;font-size:11px;padding:1px 7px;border-radius:8px;margin-left:6px;vertical-align:middle;}
- .rowbtns{display:flex;gap:6px;}
- .rowbtns a{background:#334155;color:#e2e8f0;padding:8px 10px;font-size:13px;border-radius:8px;text-decoration:none;}
+ .row{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;}
+ .row.act{border-color:#22c55e;box-shadow:0 0 0 1px #22c55e33 inset;}
+ .chk{width:24px;height:24px;flex:0 0 auto;accent-color:#22c55e;}
+ .name{font-size:16px;font-weight:800;word-break:break-word;}
+ .meta{color:var(--muted);font-size:13px;margin-top:4px;}
+ .badge{display:inline-block;background:#166534;color:#fff;font-size:11px;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle;}
+ .rowbtns{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;}
+ .rowbtns a{background:var(--button);color:var(--text);padding:9px 11px;font-size:13px;border-radius:8px;text-decoration:none;font-weight:700;}
  .rowbtns a.csv{background:#1d4ed8;color:#fff;}
- .empty{color:#94a3b8;}
- .back{color:#94a3b8;font-size:14px;display:inline-block;margin-bottom:12px;}
+ .empty{color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;}
+ .back{white-space:nowrap;}
+ @media(max-width:720px){body{padding:8px}.header{align-items:flex-start}.actions{grid-template-columns:1fr 1fr}.row{grid-template-columns:auto 1fr}.rowbtns{grid-column:1 / -1;justify-content:stretch}.rowbtns a{flex:1;text-align:center}}
 </style></head><body>
- <a class="back" href="/">← Back to counter</a>
- <h1>Recordings</h1>
+ <main class="page">
+ <div class="header">
+   <div><h1>Recordings</h1><div class="sub">Review sessions, export labels, and open timeline figures.</div></div>
+   <a class="btn back" href="/">← Counter</a>
+ </div>
  <div class="actions">
    <a class="btn primary" href="/export.csv">⬇ Download ALL (one CSV)</a>
    <button class="primary" id="dlSel">⬇ Download selected</button>
@@ -220,6 +229,7 @@ function pageRecordings() {
    <button class="sec" id="none">None</button>
  </div>
  <div class="list" id="list"><p class="empty">Loading…</p></div>
+ </main>
 <script>
  const fmt = (ms) => new Date(ms).toLocaleString();
  const enc = encodeURIComponent;
@@ -267,11 +277,18 @@ function localIPs() {
 
 function counts() {
   let L = 0, R = 0;
+  let firstTs = 0, lastTs = 0, lastLeg = '';
   for (const e of state.events) {
     if (e.session !== state.session) continue;
     if (e.leg === 'L') L++; else R++;
+    if (!firstTs || e.t < firstTs) firstTs = e.t;
+    if (!lastTs || e.t >= lastTs) {
+      lastTs = e.t;
+      lastLeg = e.leg;
+    }
   }
-  return { L, R, total: L + R };
+  const elapsedSec = firstTs && lastTs ? Math.max(0, Math.round((lastTs - firstTs) / 1000)) : 0;
+  return { L, R, total: L + R, lastTs, lastLeg, elapsedSec };
 }
 
 // ---- HTML page -----------------------------------------------------------
@@ -284,57 +301,112 @@ function pageHtml() {
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Steps Counter</title>
 <style>
-  :root { --left:#2563eb; --right:#16a34a; }
+  :root {
+    --bg:#07111f; --panel:#101b2e; --panel2:#15223a; --line:#253553;
+    --text:#edf4ff; --muted:#9fb0c8; --left:#2563eb; --right:#16a34a;
+    --danger:#b4232f; --ok:#15803d; --button:#22314f;
+  }
   * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-  html, body { margin:0; height:100%; font-family: system-ui, -apple-system, sans-serif; background:#0f172a; color:#e2e8f0; overflow:hidden; }
-  .top { display:flex; flex-direction:column; gap:8px; padding:10px 12px; }
-  .session { display:flex; gap:8px; align-items:center; }
-  .session input { flex:1; min-width:0; padding:10px 12px; font-size:16px; border-radius:10px; border:1px solid #334155; background:#1e293b; color:#e2e8f0; }
-  .session button, .bar button { padding:10px 14px; font-size:15px; border-radius:10px; border:none; background:#334155; color:#e2e8f0; font-weight:600; }
-  .stats { display:flex; justify-content:space-between; gap:8px; font-size:14px; color:#94a3b8; }
-  .stats b { color:#e2e8f0; font-size:20px; }
-  .pads { display:flex; flex:1; gap:8px; padding:0 12px 12px; min-height:0; }
-  .pad { flex:1; border-radius:18px; border:none; color:#fff; font-size:26px; font-weight:800; letter-spacing:.5px;
+  html, body { margin:0; min-height:100%; font-family: system-ui, -apple-system, Segoe UI, sans-serif; background:var(--bg); color:var(--text); }
+  body { display:flex; justify-content:center; padding:12px; }
+  .app { width:min(980px, 100%); min-height:calc(100vh - 24px); display:grid; grid-template-rows:auto auto auto 1fr auto; gap:12px; }
+  .header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .title { margin:0; font-size:20px; letter-spacing:.2px; }
+  .subtitle { color:var(--muted); font-size:12px; margin-top:2px; }
+  .pill { border:1px solid var(--line); background:var(--panel); color:#b8e2c6; border-radius:999px; padding:7px 10px; font-size:12px; white-space:nowrap; }
+  .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:12px; }
+  .session { display:grid; grid-template-columns:1fr auto; gap:8px; align-items:center; }
+  .session input { width:100%; min-width:0; padding:13px 14px; font-size:17px; border-radius:10px; border:1px solid var(--line); background:#0b1424; color:var(--text); outline:none; }
+  .session input:focus { border-color:#60a5fa; box-shadow:0 0 0 3px #2563eb33; }
+  button { border:none; color:var(--text); font-weight:700; cursor:pointer; touch-action:manipulation; }
+  button:disabled { opacity:.55; cursor:not-allowed; }
+  .btn { padding:13px 14px; font-size:15px; border-radius:10px; background:var(--button); }
+  .btn:active { transform:translateY(1px); filter:brightness(.92); }
+  .ok { background:var(--ok) !important; }
+  .danger { background:var(--danger) !important; }
+  .stats { display:grid; grid-template-columns:repeat(4, 1fr); gap:8px; }
+  .stat { background:var(--panel2); border:1px solid var(--line); border-radius:12px; padding:10px; min-width:0; }
+  .stat .k { color:var(--muted); font-size:12px; margin-bottom:4px; }
+  .stat .v { font-size:28px; font-weight:850; line-height:1; }
+  .stat.left .v { color:#7db0ff; }
+  .stat.right .v { color:#71df91; }
+  .status { display:grid; grid-template-columns:1fr auto; gap:8px; color:var(--muted); font-size:13px; margin-top:8px; }
+  .pads { display:grid; grid-template-columns:1fr 1fr; gap:12px; min-height:310px; }
+  .pad { position:relative; overflow:hidden; border-radius:18px; color:#fff; font-weight:900; letter-spacing:.5px;
          display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; user-select:none; touch-action:manipulation; }
-  .pad .n { font-size:64px; line-height:1; }
-  .pad.left { background:var(--left); }
-  .pad.right { background:var(--right); }
-  .pad:active { filter:brightness(.8); transform:scale(.99); }
-  .bar { display:flex; gap:8px; padding:0 12px 12px; }
-  .bar button { flex:1; }
-  .danger { background:#7f1d1d !important; }
-  .ok { background:#166534 !important; }
-  .toast { position:fixed; left:50%; bottom:80px; transform:translateX(-50%); background:#000a; padding:8px 14px; border-radius:20px; font-size:14px; opacity:0; transition:opacity .2s; pointer-events:none; }
+  .pad.left { background:linear-gradient(160deg, #1d4ed8, #2563eb); }
+  .pad.right { background:linear-gradient(160deg, #15803d, #16a34a); }
+  .pad .side { font-size:20px; opacity:.95; }
+  .pad .n { font-size:clamp(72px, 18vw, 150px); line-height:.9; }
+  .pad .hint { font-size:13px; opacity:.78; font-weight:650; }
+  .pad:active, .pad.flash { transform:scale(.992); filter:brightness(1.12); }
+  .pad.flash::after { content:""; position:absolute; inset:0; background:#ffffff2c; animation:fade .28s ease-out forwards; }
+  @keyframes fade { from { opacity:1; } to { opacity:0; } }
+  .actions { display:grid; grid-template-columns:repeat(5, 1fr); gap:8px; }
+  .toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:#020617e8; border:1px solid var(--line); padding:10px 14px; border-radius:999px; font-size:14px; opacity:0; transition:opacity .2s, transform .2s; pointer-events:none; }
   .toast.show { opacity:1; }
+  @media (max-width: 760px) {
+    body { padding:8px; }
+    .app { min-height:calc(100vh - 16px); gap:8px; }
+    .header { align-items:flex-start; }
+    .session { grid-template-columns:1fr; }
+    .stats { grid-template-columns:repeat(2, 1fr); }
+    .pads { min-height:360px; gap:8px; }
+    .actions { grid-template-columns:repeat(2, 1fr); }
+    .actions .wide { grid-column:span 2; }
+  }
 </style>
 </head>
 <body>
-  <div class="top">
+  <main class="app">
+  <header class="header">
+    <div>
+      <h1 class="title">Steps Counter</h1>
+      <div class="subtitle">Manual labels for gait segmentation experiments</div>
+    </div>
+    <div class="pill" id="saveStatus">Ready</div>
+  </header>
+
+  <section class="panel">
     <div class="session">
       <input id="session" placeholder="Session name" autocomplete="off">
-      <button id="newSession" class="ok">New session</button>
+      <button id="newSession" class="btn ok">New session</button>
     </div>
-    <div class="stats">
-      <span>Left <b id="cL">0</b></span>
-      <span>Total <b id="cT">0</b></span>
-      <span>Right <b id="cR">0</b></span>
+    <div class="status">
+      <span id="lastStep">No steps recorded in this session yet</span>
+      <span id="elapsed">0 s</span>
     </div>
-  </div>
+  </section>
 
-  <div class="pads">
-    <button class="pad left" data-leg="L"><span class="n" id="nL">0</span><span>LEFT</span></button>
-    <button class="pad right" data-leg="R"><span class="n" id="nR">0</span><span>RIGHT</span></button>
-  </div>
+  <section class="stats">
+    <div class="stat left"><div class="k">Left</div><div class="v" id="cL">0</div></div>
+    <div class="stat"><div class="k">Total</div><div class="v" id="cT">0</div></div>
+    <div class="stat right"><div class="k">Right</div><div class="v" id="cR">0</div></div>
+    <div class="stat"><div class="k">Elapsed</div><div class="v" id="elapsedBig">0s</div></div>
+  </section>
 
-  <div class="bar">
-    <button id="undo">Undo</button>
-    <button id="save" class="ok">Save data</button>
-    <button id="reset" class="danger">Clear session</button>
-  </div>
-  <div class="bar">
-    <button id="grab">View recordings</button>
-    <button id="export" class="ok">Export CSV</button>
-  </div>
+  <section class="pads">
+    <button class="pad left" data-leg="L" aria-label="Record left step">
+      <span class="side">LEFT STEP</span>
+      <span class="n" id="nL">0</span>
+      <span class="hint">Tap or press L</span>
+    </button>
+    <button class="pad right" data-leg="R" aria-label="Record right step">
+      <span class="side">RIGHT STEP</span>
+      <span class="n" id="nR">0</span>
+      <span class="hint">Tap or press R</span>
+    </button>
+  </section>
+
+  <section class="actions">
+    <button id="undo" class="btn">Undo</button>
+    <button id="save" class="btn ok">Save</button>
+    <button id="reset" class="btn danger">Clear</button>
+    <button id="grab" class="btn">Recordings</button>
+    <button id="export" class="btn wide">Export CSV</button>
+  </section>
+
+  </main>
 
   <div class="toast" id="toast"></div>
 
@@ -348,6 +420,11 @@ function pageHtml() {
   function render(s) {
     $('nL').textContent = s.L; $('nR').textContent = s.R;
     $('cL').textContent = s.L; $('cR').textContent = s.R; $('cT').textContent = s.total;
+    $('elapsed').textContent = (s.elapsedSec || 0) + ' s';
+    $('elapsedBig').textContent = (s.elapsedSec || 0) + 's';
+    $('lastStep').textContent = s.lastTs
+      ? 'Last step: ' + (s.lastLeg === 'L' ? 'left' : 'right') + ' at ' + new Date(s.lastTs).toLocaleTimeString()
+      : 'No steps recorded in this session yet';
     if (document.activeElement !== $('session')) $('session').value = s.session;
   }
   async function api(url, body) {
@@ -356,7 +433,14 @@ function pageHtml() {
   }
   async function step(leg) {
     if (navigator.vibrate) navigator.vibrate(20);
+    const pad = document.querySelector('.pad[data-leg="' + leg + '"]');
+    if (pad) {
+      pad.classList.remove('flash');
+      void pad.offsetWidth;
+      pad.classList.add('flash');
+    }
     render(await api('/step', { leg }));
+    $('saveStatus').textContent = 'Saved';
   }
   document.querySelectorAll('.pad').forEach((p) => {
     p.addEventListener('click', () => step(p.dataset.leg));
@@ -372,6 +456,7 @@ function pageHtml() {
     const w = window.open('/figure', '_blank'); // Open here from the user gesture to avoid popup blocking.
     const r = await api('/save');
     if (r.ok) {
+      $('saveStatus').textContent = 'Saved';
       toast('Saved: ' + r.saved + ' events · figure opened');
       if (!w) window.location = '/figure'; // If the browser blocked the tab, navigate to the figure.
     } else {
@@ -382,6 +467,12 @@ function pageHtml() {
     if (confirm('Clear all steps from this session?')) { render(await api('/reset')); toast('Session cleared'); }
   });
   $('export').addEventListener('click', () => { window.location = '/export.csv'; });
+  document.addEventListener('keydown', (e) => {
+    if (e.target && ['INPUT', 'TEXTAREA'].includes(e.target.tagName)) return;
+    if (e.key.toLowerCase() === 'l') step('L');
+    if (e.key.toLowerCase() === 'r') step('R');
+    if (e.key.toLowerCase() === 'u') $('undo').click();
+  });
   // Initial state.
   fetch('/state').then(r => r.json()).then(render);
 </script>

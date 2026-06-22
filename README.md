@@ -92,6 +92,12 @@ To write to a different data file:
 STEP_DATA_FILE=/path/to/steps.json node steps-counter.js
 ```
 
+Interaction shortcuts when using a laptop keyboard:
+
+- `L`: record a left step.
+- `R`: record a right step.
+- `U`: undo the latest step in the active session.
+
 ## ROS 2 Installation
 
 Clone this repository into a ROS 2 workspace:
